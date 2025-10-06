@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGBW Control App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RGBW Control App</h1>
+        
+        <div class="camera-section">
+            <label for="cameraSelect">Select Camera:</label>
+            <select id="cameraSelect"></select>
+        </div>
+
+        <div class="video-section">
+            <video id="videoElement" autoplay playsinline muted></video>
+            <canvas id="canvasElement" style="display: none;"></canvas>
+        </div>
+
+        <div class="color-preview-section">
+            <div id="colorPreview" class="color-preview"></div>
+            <div id="colorValues" class="color-values">RGB: ---, ---, ---</div>
+        </div>
+
+        <div class="controls-section">
+            <button id="sendButton" class="btn btn-primary">Send Color</button>
+            <button id="autoButton" class="btn btn-secondary">Auto Mode</button>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

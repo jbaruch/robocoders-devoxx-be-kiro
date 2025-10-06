@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Auto-Generate TDD Tests",
+  "description": "When a tasks.md file is created in any spec folder, automatically generate comprehensive test files following TDD principles by reading requirements and design documents",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      ".kiro/specs/*/tasks.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A tasks.md file has been created at {filePath}. Please generate comprehensive TDD test files by:\n\n1. Reading the requirements from the corresponding requirements.md file in the same spec folder to identify all user stories\n2. Reading the design from the corresponding design.md file in the same spec folder to understand:\n   - The tech stack and testing framework to use\n   - The project structure and where to place test files\n   - The architecture and design patterns\n\n3. Creating test files that:\n   - Are executable with no compilation or syntax errors\n   - Fail predictably with \"not yet implemented\" or similar messages initially\n   - Cover ALL user stories identified in requirements.md\n   - Use the appropriate testing framework based on the tech stack\n   - Follow the project structure defined in design.md\n   - Include proper test setup, teardown, and assertions\n   - Use descriptive test names that map directly to user stories\n   - Have a comment at the top indicating which user stories they cover\n\n4. Placing the test files in the appropriate location based on the project structure in design.md\n\nThe tests should serve as executable specifications following TDD principles that will guide implementation and turn green as features are built."
+  }
+}

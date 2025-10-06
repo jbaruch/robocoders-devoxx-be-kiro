@@ -1,0 +1,16 @@
+{
+  "name": "rgbw-control-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright integration tests for RGBW Control App",
+  "scripts": {
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:safari": "playwright test --project=webkit",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
